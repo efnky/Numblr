@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+    <head>
+        <title>NUMBLR - Facile</title>
+    </head>
+    <link rel="stylesheet" type="text/css" href="style_v2.css">
+    <body>
+        <section style="z-index: -1;">
+            <div class="numberImage">
+                <div><img src="numbers/number_1.png" height="75px" width="75px"></img></div>
+                <div><img src="numbers/number_2.png" height="75px" width="75px" ></img></div>
+                <div><img src="numbers/number_3.png" height="75px" width="75px"></img></div>
+                <div><img src="numbers/number_4.png" height="75px" width="75px"></img></div>
+                <div><img src="numbers/number_5.png" height="75px" width="75px"></div>
+                <div><img src="numbers/number_6.png" height="75px" width="75px"></div>
+                <div><img src="numbers/number_7.png" height="75px" width="75px"></img></div>
+                <div><img src="numbers/number_8.png" height="75px" width="75px"></img></div>
+                <div><img src="numbers/number_9.png" height="75px" width="75px"></img></div>
+            </div>
+        </section>
+        <div class="titre">
+            <p>Essayez de trouver la combinaison des chiffres</p>
+            <p id="easyMode">Mode facile</p>
+        </div>            
+        <div id="helpMenu" class="help-menu">
+            <h2>Instructions du jeu</h2>
+            <p>Ce jeu consiste à essayer de deviner le nombre secret en un nombre limité d'oportunitees et grace à certaines pistes</p>
+            <li class="Vert"> Vert: Chiffre dans le nombre et bien placée</li>
+            <li class="Jaune"> Jaune: Chiffre dans le nombre mais mal placée</li>
+            <li class= "Rouge"> Rouge: Chiffre pas dans le nombre</li></p>
+            <button class="fermer" onclick="help_bot()">Fermer</button>
+        </div>
+        <div id="inputArea" style="text-align: center;">
+            <div class="number-input-container">
+                <input type="number" min="0" max="9" class="number-input" id="numberInput" oninput="limitToOneDigit(this)">
+                <input type="number" min="0" max="9" class="number-input" id="numberInput" oninput="limitToOneDigit(this)">
+                <input type="number" min="0" max="9" class="number-input" id="numberInput" oninput="limitToOneDigit(this)">
+                <input type="number" min="0" max="9" class="number-input" id="numberInput" oninput="limitToOneDigit(this)">
+            </div>
+            <div id="balls" style="margin: 20px;"></div>
+            <button class="soumettre" onclick="insererTentative()">Soumettre</button>
+        </div>
+        <div id="sauvegard" style="text-align: center; margin: 100px;">
+            <!-- sauvegard des tentative sera affiché ici -->
+        </div>
+        <script>
+            var totalDigits = 4;
+        </script>
+        <script src="nbr_wordle.js"></script>
+        
+        <div class="container2">       
+            <button onclick="help_bot()">Help</button>
+            <button onclick="restartGame()">Rejouer</button>
+            <button onclick="location.href='index.html'">Menu Principal</button>
+        </div>
+    </body>
+</html>
